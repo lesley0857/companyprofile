@@ -15,7 +15,8 @@ SECRET_KEY = 'django-insecure-odcjnw72a8l)-8b$35f!6)f$z1fvh8z2ms*)bvi+xmz2+&&a5p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',"lemarobe.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://lemarobe.onrender.com"]
 
 
 # Application definition
