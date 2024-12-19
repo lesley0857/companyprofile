@@ -4,6 +4,7 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 
 # Create your views here.
+from .models import *
 
 def about(request):
     return render(request,'about.html')
@@ -37,7 +38,9 @@ def quote_view(request):
         return HttpResponse(html_content)
     
 def services(request):
-    return render(request,'services.html')
+    services  = Services.objects.all()
+    context = {'services':services}
+    return render(request,'service-details.html',context)
 
 def services_details(request,id):
-    return render(request,'services-details.html')
+    return render(request,'service-details.html')
